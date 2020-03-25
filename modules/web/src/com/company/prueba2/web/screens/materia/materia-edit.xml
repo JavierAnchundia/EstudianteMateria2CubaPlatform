@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.prueba2.web.screens.materia">
+    <data>
+        <instance id="materiaDc"
+                  class="com.company.prueba2.entity.Materia"
+                  view="materia-view">
+            <loader/>
+        </instance>
+        <collection id="estudiantesDc" class="com.company.prueba2.entity.Estudiante" view="_minimal">
+            <loader id="estudiantesLc">
+                <query>
+                    <![CDATA[select e from prueba2_Estudiante e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="materiaDc">
+            <column width="250px">
+                <textField id="nombreMateriaField" property="nombreMateria"/>
+                <textField id="codigoField" property="codigo"/>
+                <lookupPickerField id="estudianteField" optionsContainer="estudiantesDc" property="estudiante"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="pruebaba"/>
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://caption"
+        messagesPack="com.company.prueba2.web.screens.materiaestudiante">
+    <data>
+        <collection id="materiasDc" class="com.company.prueba2.entity.Materia" view="materia-view_1">
+            <loader id="materiasDl">
+                <query>
+                    <![CDATA[select e from prueba2_Materia e where e.estudiante ]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <label value="Materias que se pueden tomar:"/>
+        <groupTable id="materiasTable" width="100%" dataContainer="materiasDc" height="100px">
+            <columns>
+                <column id="nombreMateria"/>
+                <column id="codigo"/>
+            </columns>
+        </groupTable>
+        <button id="anadirMaterias" caption="Anadir Materias" align="MIDDLE_CENTER"/>
+        <label value="Materias del Estudiante:"/>
+        <textArea id="materiasTomadas" align="TOP_CENTER" width="100%"/>
+    </layout>
+</window>

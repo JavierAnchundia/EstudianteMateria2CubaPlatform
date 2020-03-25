@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="prueba2_Materia" name="materia-view" extends="_local">
+        <property name="estudiante" view="_minimal">
+
+        </property>
+    </view>
+    <view entity="prueba2_Materia" name="materia-view_1" extends="_local">
+        <property name="estudiante" view="_minimal"/>
+    </view>
+    <view entity="prueba2_Materia" name="materia-view_2" extends="_local">
+        <property name="estudiante" view="_minimal"/>
+    </view>
+</views>

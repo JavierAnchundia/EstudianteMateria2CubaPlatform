@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="materiasTable"
+        messagesPack="com.company.prueba2.web.screens.materia">
+    <data readOnly="true">
+        <collection id="materiasDc"
+                    class="com.company.prueba2.entity.Materia"
+                    view="_local">
+            <loader id="materiasDl">
+                <query>
+                    <![CDATA[select e from prueba2_Materia e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="materiasTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="materiasTable"
+                dataLoader="materiasDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="materiasTable"
+                    width="100%"
+                    dataContainer="materiasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="nombreMateria"/>
+                <column id="codigo"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <hbox spacing="true">
+                    <button id="createBtn" action="materiasTable.create"/>
+                    <button id="editBtn" action="materiasTable.edit"/>
+                    <button id="removeBtn" action="materiasTable.remove"/>
+                </hbox>
+                <hbox spacing="true">
+                    <button id="prueba" caption="prueba"/>
+                </hbox>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
