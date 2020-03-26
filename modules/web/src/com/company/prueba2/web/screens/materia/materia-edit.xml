@@ -24,11 +24,10 @@
             <column width="250px">
                 <textField id="nombreMateriaField" property="nombreMateria"/>
                 <textField id="codigoField" property="codigo"/>
-                <lookupPickerField id="estudianteField" optionsContainer="estudiantesDc" property="estudiante"/>
+                <lookupPickerField id="estudianteField" visible="false" optionsContainer="estudiantesDc" property="estudiante"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
-            <button id="pruebaba"/>
             <button action="windowCommitAndClose"/>
             <button action="windowClose"/>
         </hbox>

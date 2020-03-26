@@ -22,7 +22,7 @@ public class MateriasEstudianteServiceBean implements MateriasEstudianteService 
     @Override
     public List<Materia> obtenerMaterias(Estudiante estudiante) {
         List<Materia> materias  = dataManager.load(Materia.class)
-                .query("select s from prueba1_Materia s where"+
+                .query("select s from prueba2_Materia s where"+
                         " s.estudiante = :estudiante").parameter("estudiante",estudiante).list();
 
         return materias;
@@ -30,8 +30,12 @@ public class MateriasEstudianteServiceBean implements MateriasEstudianteService 
 
     @Override
     public Boolean anadirMaterias(Materia materia, Estudiante estudiante) {
+
+        Materia materia1 = dataManager.load(Materia.class)
+                .query("select s from prueba2_Materia s where"+
+                        " s.id = :id").parameter("id",materia.getId()).one();
         System.out.println(estudiante.getId()+ " " + estudiante.getNombre());
-        System.out.println(materia.getId()+ " " + materia.getNombreMateria());
+        System.out.println(materia1.getId()+ " " + materia1.getNombreMateria());
         Estudiante estudiante2 = dataManager.getReference(Estudiante.class,estudiante.getId());
         System.out.println(estudiante2.getId()+ " " + estudiante2.getNombre());
         System.out.println(estudiante.getId()+ " " + estudiante.getNombre());
@@ -43,6 +47,5 @@ public class MateriasEstudianteServiceBean implements MateriasEstudianteService 
             dataManager.commit(materia);
             return true;}
         else{return false;}
-
     }
 }

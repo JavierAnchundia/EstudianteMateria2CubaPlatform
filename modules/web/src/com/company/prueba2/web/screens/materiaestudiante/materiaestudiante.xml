@@ -6,21 +6,28 @@
         <collection id="materiasDc" class="com.company.prueba2.entity.Materia" view="materia-view_1">
             <loader id="materiasDl">
                 <query>
-                    <![CDATA[select e from prueba2_Materia e where e.estudiante ]]>
+                    <![CDATA[select e from prueba2_Materia e where e.estudiante IS NULL ]]>
                 </query>
             </loader>
         </collection>
     </data>
     <layout>
-        <label value="Materias que se pueden tomar:"/>
-        <groupTable id="materiasTable" width="100%" dataContainer="materiasDc" height="100px">
-            <columns>
-                <column id="nombreMateria"/>
-                <column id="codigo"/>
-            </columns>
-        </groupTable>
-        <button id="anadirMaterias" caption="Anadir Materias" align="MIDDLE_CENTER"/>
-        <label value="Materias del Estudiante:"/>
-        <textArea id="materiasTomadas" align="TOP_CENTER" width="100%"/>
+        <vbox spacing="true">
+            <vbox spacing="true">
+                <label value="Materias que se pueden tomar:" height="50%"/>
+                <groupTable id="materiasTable" dataContainer="materiasDc" width="100%" align="TOP_LEFT" height="auto"
+                            >
+                    <columns>
+                        <column id="nombreMateria"/>
+                        <column id="codigo"/>
+                    </columns>
+                </groupTable>
+            </vbox>
+            <button id="anadirMaterias" caption="Anadir Materias" align="MIDDLE_CENTER"/>
+            <vbox spacing="true">
+                <label value="Materias del Estudiante:"/>
+                <textArea id="materiasTomadas" align="TOP_CENTER" width="100%" height="200px" editable="false"/>
+            </vbox>
+        </vbox>
     </layout>
 </window>

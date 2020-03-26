@@ -45,7 +45,7 @@
                     <button id="removeBtn" action="estudiantesTable.remove"/>
                 </hbox>
                 <hbox spacing="true">
-                    <button id="verMaterias" align="TOP_RIGHT"/>
+                    <button id="verMaterias" align="TOP_RIGHT" caption="Ver Materias"/>
                 </hbox>
             </buttonsPanel>
         </groupTable>

@@ -14,7 +14,7 @@ import java.util.List;
 @EditedEntityContainer("materiaDc")
 @LoadDataBeforeShow
 public class MateriaEdit extends StandardEditor<Materia> {
-
+    /*
     @Inject
     private DataManager dataManager;
     @Inject
@@ -41,12 +41,12 @@ public class MateriaEdit extends StandardEditor<Materia> {
             System.out.println(materia.getNombreMateria()+ " " +
                     materia.getId());
             System.out.println(materia.getEstudiante() + " " + materia.getEstudiante().getNombre());
-            /*Estudiante estudiante2 = dataManager.getReference(Estudiante.class,estudiante.getId());
+            Estudiante estudiante2 = dataManager.getReference(Estudiante.class,estudiante.getId());
             materia.setEstudiante(estudiante2);
-            dataManager.commit(materia);*/
+            dataManager.commit(materia);
 
 
         }
-    }
+    }*/
     
 }
